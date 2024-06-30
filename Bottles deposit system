@@ -1,0 +1,31 @@
+bottles_per_ltr = 0.50
+total_deposit=0
+user_name = input("Please enter your name: ")
+
+while True:
+    user_bottles_deposit = float(input("Enter your bottle size\nexample like if you have 1ltr bottle enter 1\nor 2ltr bottle enter 2"))
+
+    if user_bottles_deposit == 1:
+        deposit = 1 * bottles_per_ltr
+    elif user_bottles_deposit == 2:
+        deposit = 2 * bottles_per_ltr
+    elif user_bottles_deposit ==1.5:
+        deposit = 1.5 * bottles_per_ltr
+    elif user_bottles_deposit == 2.5:
+        deposit= 2.5 * bottles_per_ltr
+    elif user_bottles_deposit == 0.5:
+        deposit = 0.5 * bottles_per_ltr
+    elif user_bottles_deposit == 5:
+        deposit= 5 * bottles_per_ltr
+    else:
+        print("Invalid Size")
+    total_deposit = total_deposit + deposit
+    
+    print(f"{user_name}, your deposit for a {user_bottles_deposit:.2f} liter bottle is ₹{total_deposit:.2f}")
+
+    another=str(input("Do you want to deposit more bottles! if you want type(Yes/no)"))
+    if another != 'yes':
+        break
+        
+print("Thank u! You will get: ",total_deposit,"\u20B9")
+
