@@ -1,7 +1,11 @@
-bottles_per_ltr = 0.50
+import time
+bottles_per_ltr = 0.20
 total_deposit=0
+print ("Welcome")
+time.sleep(2)
 user_name = input("Please enter your name: ")
-
+print(user_name.title(),"Deposit your bottles here:")
+time.sleep(1)
 while True:
     user_bottles_deposit = float(input("Enter your bottle size\nexample like if you have 1ltr bottle enter 1\nor 2ltr bottle enter 2"))
 
@@ -26,6 +30,10 @@ while True:
     another=str(input("Do you want to deposit more bottles! if you want type(Yes/no)"))
     if another != 'yes':
         break
-        
-print("Thank u! You will get: ",total_deposit,"\u20B9")
+time.sleep(1)
+print("Wait your deposit amount is calculting")
+time.sleep(1)
+
+print("Thank u! You will get: ",round(total_deposit),"\u20B9") #\u20B9 is key of rupees symbol
+
 
