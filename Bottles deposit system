@@ -1,5 +1,7 @@
 import time
-bottles_per_ltr = 0.20
+import secrets
+import string
+bottles_per_ltr = 0.50
 total_deposit=0
 print ("Welcome")
 time.sleep(2)
@@ -33,7 +35,16 @@ while True:
 time.sleep(1)
 print("Wait your deposit amount is calculting")
 time.sleep(1)
+def generate_coupon(length):
+    alphabet = string.ascii_uppercase + string.digits
+    coupon_code = "".join(secrets.choice(alphabet) for i in range(length))
+    return coupon_code
 
-print("Thank u! You will get: ",round(total_deposit),"\u20B9") #\u20B9 is key of rupees symbol
+coupon = generate_coupon(8)
+print("Thank u! You will get: ",total_deposit,"\u20B9") #\u20B9 is key of rupees symbol
+print("Wait working on your coupon")
+time.sleep(2)
+print(f"{user_name.title()}\n₹{total_deposit}\n{coupon}")
+        
 
 
